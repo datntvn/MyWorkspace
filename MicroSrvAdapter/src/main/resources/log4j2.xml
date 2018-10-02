@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <!-- Console Appender -->
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+    </Console>
+    <!-- File Appender -->
+    <File name="File" fileName="D:/datnt/logs_newservice/app.log">
+      <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+    </File>
+    <!-- BEGIN: create access log file -->
+    <File name="access" fileName="D:/datnt29/logs_newservice/access.log">
+      <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+    </File>
+    <!-- END: create access log file -->
+    
+  </Appenders>
+
+  <Loggers>
+    <!-- Log everything in custom package -->
+    <Logger name="com" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="File" />
+    </Logger>
+    <!-- BEGIN: log to a separate file -->
+    <Logger name="com.starhub.controllers.CCAdapterController" level="info" additivity="false">
+        <!-- CRITICAL: this config is more detail than name="com" -->
+        <!--          so that, it must be at below the above config -->
+        <AppenderRef ref="access"/>
+    </Logger>
+    <!-- END: log to a separate file -->
+    <!-- Log everything in Spring Boot -->
+    <Logger name="org.springframework.boot" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="File" />
+    </Logger>
+
+    <!-- Log everything in Spring Core -->
+    <Logger name="org.springframework.core" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="File" />
+    </Logger>
+
+    <Root level="error">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="File" />
+    </Root>
+    
+  </Loggers>
+</Configuration>
