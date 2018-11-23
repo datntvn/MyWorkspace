@@ -14,4 +14,5 @@ Here is how I organize my project that you could use it as a reference to restru
 &nbsp;&nbsp;&nbsp;&nbsp;[Your xamarin] : This project stores the code for UI (files like XAML, XAML.cs)  
   
 NOTE:  
-* you have to install NugetPackage: Xamarin.Auth for each of your projects
+* You have to install NugetPackage: Xamarin.Auth for each of your projects  
+* You also have to install NugetPackage: Newtonsoft.Json
