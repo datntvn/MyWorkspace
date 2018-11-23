@@ -2,7 +2,7 @@
 
 This is not a complete project, just the needed source code that you can use to add into your own project and run.  
 
-My great appreciate to "Timothé Larivière" for providing precious guideline and source code.  
+My great appreciate to "**Timothé Larivière**" for providing precious guideline and source code.  
   
 Here is his article: http://timothelariviere.com/2017/09/01/authenticate-users-through-google-with-xamarin-auth/#comment-11868  
   
@@ -43,4 +43,7 @@ You need to add below xml content into your info.plist file in order for IOS app
     </dict>
   </array>
 ```
-
+  
+One last thing, pay close attention to handling redirect_url:  
+**(1)** How you should add code to AppDelete.cs  
+**(2)** How you should config your Info.plist to map the REVERSED_ID  
