@@ -1,7 +1,13 @@
 # # DatNT Code snipet that support for Xamarin project to perform OAuth with Google!
 
-This is not a complete project, just the needed source code that you can use to add into your own project and run.
+This is not a complete project, just the needed source code that you can use to add into your own project and run.  
 
+My great appreciate to "Timothé Larivière" for providing precious guideline and source code.  
+  
+Here is his article: http://timothelariviere.com/2017/09/01/authenticate-users-through-google-with-xamarin-auth/#comment-11868  
+  
+But his sample code does not match 100% with my need, because in my case the way I organize inner-projects is different from him, so that I have to create a singleton, and specific code differently.
+  
 Here is how I organize my project that you could use it as a reference to restructure the code as your need.
 
 
