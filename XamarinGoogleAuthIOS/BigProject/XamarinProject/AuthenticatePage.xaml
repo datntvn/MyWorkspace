@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             x:Class="DatNT.AuthenticatePage">
+    <ContentPage.Content>
+        <Grid VerticalOptions="Fill" HorizontalOptions="Fill">
+            <StackLayout>
+                <Label x:Name="lblOnlyVoid" FontSize="Large" Text="Void Label to rescue space issue on IOS" Margin="0, 0, 0, 20"/>
+                <Button x:Name="btnLogin" BorderColor="Black" BorderWidth="1" Text="Login" Clicked="btnLgin_Clicked" Margin="0, 0, 0, 50" />
+                <Button x:Name="btnShowToken" BorderColor="Black" BorderWidth="1" Text="Show Token - After Auth Only" Clicked="btnShowToken_Clicked" Margin="0, 0, 0, 50" />
+                <Label x:Name="lblToken" FontSize="Large" Text="Token will be shown here: " Margin="0, 0, 0, 20"/>
+                <Button x:Name="btnShowEmail" BorderColor="Black" BorderWidth="1" Text="Get Email - After Auth Only" Clicked="btnShowEmail_Clicked" Margin="0, 0, 0, 50" />
+                <Label x:Name="lblEmail" FontSize="Large" Text="Email will be shown here: " Margin="0, 0, 0, 20"/>
+            
+
+		    </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
