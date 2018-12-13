@@ -4,12 +4,11 @@ Because the book is way too old interm of compatible to latest version of depend
 Chapter 2 need to add below packages:  
   
 react-bootstrap: npm install react-bootstrap --save-dev  
-react-router  
-lodash  
-Reflux  
-superagent  
-react-router-bootstrap  
-  
+react-router: npm install react-router --save-dev  
+lodash: npm install lodash --save-dev  
+reflux: npm install reflux --save-dev  
+superagent: npm install superagent --save-dev  
+react-router-bootstrap: npm install react-router-bootstrap --save-dev  
   
 # Update 2
 You should use nvm to be easier in finding which version of node work for you (based on the list of dependencies that the book sample required)
