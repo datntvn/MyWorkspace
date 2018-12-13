@@ -1,3 +1,6 @@
+Because the book is way too old interm of compatible to latest version of dependencies, we have to make below modification, you can skipp the part that is marked within BEGIN - END which I noted for my own.
+
+# Update 1
 Chapter 2 need to add below packages:  
   
 react- bootstrap  
@@ -8,10 +11,17 @@ superagent
 react-router-bootstrap  
   
   
+# Update 2
+You should use nvm to be easier in finding which version of node work for you (based on the list of dependencies that the book sample required)
+
 Having error when execute "npm install" due to nodejs & nvm in 2018 is not compatible with the version required by the book
   
 Refer to this link: http://dev.topheman.com/install-nvm-with-homebrew-to-use-multiple-versions-of-node-and-iojs-easily/
-  
+
+All version of node I had installed:  v6.7.0,v6.9.5,v6.11.3,v7.0.0,v7.10.0
+and I tested, and command "npm install" works for 7.0.0, and 6.11.3
+
+# BEGIN - skip this part
 ..
 Below are notes from installing nvm via brew, I kept the information here for later reference in case I want to completely remove this installation manually
 
@@ -31,15 +41,17 @@ configuration file:
 
     Type `nvm help` for further information.
   
+# END - skip this part
 -------------
 In 2016, the book ReactJS blueprints was released, so, I guess the version of nodejs could be: Node.js 7.0.0
   Now using node v7.0.0 (npm v3.10.8)
   
   
 ---------------
-Long story short, in order to avoid below errors you need to  
-  change version of "jsxstyle" to "0.0.22" within file package.json
+## Long story short, in order to avoid below errors you need to  
+##   change version of "jsxstyle" to "0.0.22" within file package.json
 
+# BEGIN - skip this part
 Below is the detail of error that I faced along with tried that I made.
 
 command "npm install" continue to product error  
@@ -80,10 +92,9 @@ After digging the error messages a little bit more, it looks like, the error is 
    The same bug is reported at: https://github.com/brianmcd/contextify/issues/205
   
 
-WOW, this fix for me "jsxstyle": "0.0.22"
+# WOW, this fix for me "jsxstyle": "0.0.22"
 i.e changing version of jsxstyle to 0.0.22. All other solutions failed (even downgrade of upgrade version of nodejs does not work)
-All version of node I had installed:  v6.7.0,v6.9.5,v6.11.3,v7.0.0,v7.10.0
-and I tested, and command "npm install" works for 7.0.0, and 6.11.3
+# END - skip this part
 
 OK, then all other packages can be installed alright.
 
