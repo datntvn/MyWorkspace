@@ -3,7 +3,7 @@ Because the book is way too old interm of compatible to latest version of depend
 # Update 1
 Chapter 2 need to add below packages:  
   
-react- bootstrap  
+react-bootstrap: npm install react-bootstrap --save-dev  
 react-router  
 lodash  
 Reflux  
