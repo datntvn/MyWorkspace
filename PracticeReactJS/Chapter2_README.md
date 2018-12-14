@@ -3,11 +3,12 @@ Because the book is way too old interm of compatible to latest version of depend
 # Update 1
 Chapter 2 need to add below packages:  
   
-react-bootstrap: npm install react-bootstrap --save-dev  
-react-router: npm install react-router --save-dev  
-lodash: npm install lodash --save-dev  
-reflux: npm install reflux --save-dev  
-superagent: npm install superagent --save-dev  
+react-bootstrap: **npm install react-bootstrap --save-dev**  
+react-router: **npm install react-router --save-dev**  
+lodash: **npm install lodash --save-dev**  
+reflux: **npm install reflux --save-dev**  
+superagent: **npm install superagent --save-dev**  
+⋅⋅1. HTTP request library called Superagent, will be used to access product.json within /public folder   
 react-router-bootstrap: npm install react-router-bootstrap --save-dev  
   
 # Update 2
