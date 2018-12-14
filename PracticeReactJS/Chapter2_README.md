@@ -96,5 +96,5 @@ After digging the error messages a little bit more, it looks like, the error is 
 i.e changing version of jsxstyle to 0.0.22. All other solutions failed (even downgrade of upgrade version of nodejs does not work)
 # END - skip this part
 
-OK, then all other packages can be installed alright.
+OK, then all other packages can be installed properly.
 
