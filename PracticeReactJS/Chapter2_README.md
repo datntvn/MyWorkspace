@@ -8,8 +8,8 @@ react-router: **npm install react-router --save-dev**
 lodash: **npm install lodash --save-dev**  
 reflux: **npm install reflux --save-dev**  
 superagent: **npm install superagent --save-dev**  
-⋅⋅1. HTTP request library called Superagent, will be used to access product.json within /public folder   
-react-router-bootstrap: npm install react-router-bootstrap --save-dev  
+```HTTP request library called Superagent, will be used to access product.json within /public folder```   
+react-router-bootstrap: **npm install react-router-bootstrap --save-dev**  
   
 # Update 2
 You should use nvm to be easier in finding which version of node work for you (based on the list of dependencies that the book sample required)
