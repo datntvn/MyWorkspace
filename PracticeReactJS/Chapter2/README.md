@@ -1,10 +1,10 @@
-# # Practice React JS - Chapter!
-
-# This is my quick verify the correctness (i.e runnable) by copy & paste the source code from the book, I also combine with some source from github repo of this book.  
+Practice React JS - Chapter!  
   
-# Actually, I have to say that this book is organized in a way that is not easy to understand the concept. It could be used as an explanation for the source code it provided via gitrepo. Other than that, the content within the book is clumsy, messup, not-well-organized.
+This is my quick verify the correctness (i.e runnable) by copy & paste the source code from the book, I also combine with some source from github repo of this book.  
   
-# There should have been more granular in the way that idea should have been developed for the sample project. The author had jumped over too many stories/requirements, added bunch & bunch of code that make it very hard for the reader to find out the main point of each chapter.  
+Actually, I have to say that this book is organized in a way that is not easy to understand the concept. It could be used as an explanation for the source code it provided via gitrepo. Other than that, the content within the book is clumsy, messup, not-well-organized.
+  
+There should have been more granular in the way that idea should have been developed for the sample project. The author had jumped over too many stories/requirements, added bunch & bunch of code that make it very hard for the reader to find out the main point of each chapter.  
   
 # In my opinion, the content could have been made with smaller increment, e.g:  
 
