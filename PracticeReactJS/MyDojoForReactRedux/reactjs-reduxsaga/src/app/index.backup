@@ -1,0 +1,90 @@
+// import React from "react";
+// import {render} from "react-dom";
+
+// import { User } from './components/User';
+// import { Main } from './components/Main';
+
+// class App extends React.Component {
+//     constructor() {
+//         super();
+//         this.state = {
+//             username: "Max"
+//         };
+//     }
+
+//     changeUsername(newName) {
+//         this.setState({
+//             username: newName
+//         });
+//     }
+
+//     render() {
+//         return (
+//             <div className="container">
+//                 <Main changeUsername={this.changeUsername.bind(this)}/>
+//                 <User username={this.state.username}/>
+//             </div>
+//         );
+//     }
+// }
+
+// render(<App />, window.document.getElementById('app'));
+
+import { createStore } from "redux";
+import { combineReducers } from "redux";
+import { applyMiddleware } from "redux";
+
+const initState = {
+    result: 0,
+    history: []
+};
+
+const mathR = (state = initState, action) => {
+    switch(action.type) {
+        case "A":
+            state = {
+                ...state,
+                result: state.result + action.v,
+                history: [...state.history, action.v]
+
+            };
+            break;
+    }
+    return state;
+};
+
+const user = (state = {        name: "M",        age: 2    }, action) =>     {
+    switch (action.type) {
+        case "age":
+            state = {...state,
+                age: action.v
+            };
+            break;
+    }
+    return state;
+};
+
+
+const store = createStore(combineReducers({mathR, user}));
+store.subscribe(() => {
+    console.log("v: ", store.getState());
+});
+
+store.dispatch({
+    type: "A",
+    v: 3
+});
+
+store.dispatch({
+    type: "A",
+    v: 3
+});
+store.dispatch({
+    type: "A",
+    v: 3
+});
+
+store.dispatch({
+    type: "age",
+    v: 3
+});
