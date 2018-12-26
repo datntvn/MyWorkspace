@@ -15,6 +15,6 @@ From my opinion, redux's action is not an action at all, it is like a data struc
   
 To me, this should have been called "actionData" or "actionDetail" or something else...
   
-Another thing is that, the function "dispath" is actually the THING which should have been called action. Function "dispatch" will send the action (i.e the actionData/actionDetail) to the reducer
+Another thing is that, the function "dispatch" is actually the THING which should have been called action. Function "dispatch" will send the action (i.e the actionData/actionDetail) to the reducer
   
 One last thing, reducers are functions that handle the actions triggered by "dispatch". And, therefore, reducers should have been called ActionHandler which is a lot easier to understand.
