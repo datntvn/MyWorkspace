@@ -1,0 +1,75 @@
+import React from "react";
+import {render} from "react-dom";
+
+import {createStore} from "redux";
+import {combineReducers} from "redux";
+import {applyMiddleware} from "redux";
+import logger from "redux-logger";
+import { Provider } from "react-redux";
+
+import App from "./components/App";
+
+const initState = {
+    ssum: 0,
+    history: []
+};
+
+const reducer = (state = initState, action) => {
+    switch(action.type) {
+        case "A":
+            state = {
+                ...state,
+                ssum: state.ssum + action.v,
+                history: [...state.history, action.v]
+            };
+            break;
+    }
+    return state;
+}
+
+const userState = {
+    name: "Peter",
+    age: 2
+};
+
+const userReducer = (state = userState, action) => {
+    switch(action.type) {
+        case "age":
+            state = {
+                ...state,
+                age: action.age
+            };
+            break;
+        case "N":
+            state = {
+                ...state,
+                name: action.str
+            };
+            break;
+    }
+    return state;
+}
+
+const myLogger = (store) => (next) => (action)=> {
+    console.log("Logged: ", action);
+    next(action);
+}
+
+const store = createStore(
+        combineReducers({
+            math: reducer, 
+            user: userReducer
+        }),
+        {},
+        applyMiddleware(logger)
+);
+
+store.subscribe(() => {
+    console.log("v == ",store.getState() );
+});
+
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>, 
+    window.document.getElementById('app'));

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ReactJS Basics</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="app"></div>
+<script src="/app/bundle.js"></script>
+<!-- BEGIN - practice promise -->
+<div id="holder" class="container">
+	
+</div>
+
+<script>
+	let giphyUrl = "https://api.giphy.com/v1/gifs/search?rating=G&api_key=OeysNVGPI2ZuT9hLJJEKOabKOEZWNCki&q=";
+	let count = 0;
+
+	// $(document).ready(function() {
+	// 	setup();
+	// });
+	// function genWord() {
+	// 	let i1 = Math.round(Math.random(9)*10%9);
+	// 	let set1 = ["byt","moi","ar","te","nu","com","joi","fy","to"];
+	// 	let i2 = Math.round(Math.random(9)*10%9);
+	// 	let set2 = ["a","i","o","e","u","p","f","mo","yo"];
+	// 	return set1[i1] + set2[i2];
+	// }
+	// function setup() {
+	// 	let w = genWord();
+	// 	getGif(w);
+	// 	// showResult(result);
+	// }
+	// function getGif(word) {
+	// 	let queryUrl = giphyUrl + word;
+	// 	let imageUrl = null;
+
+	// 	fetch(queryUrl)
+	// 	.then((response) => {
+	// 		return response.json();
+	// 	})
+	// 	.then((json) => {
+	// 		// console.log("j = ",json.data[0]["images"]["fixed_height_still"]["url"]);
+	// 		// imageUrl = json.data[0]["images"]["fixed_height_still"]["url"];
+	// 		// showResult({
+	// 		// 	image: imageUrl,
+	// 		// 	word: word
+	// 		// });
+	// 	})
+	// 	.catch((err) => {
+	// 		console.error("ERR: ", err);
+	// 	});
+	// 	// return {
+	// 	// 	image: imageUrl,
+	// 	// 	word: word
+	// 	// };
+	// }
+	// function createWord(word) {
+	// 	$('#holder').append("<h1>"+word+"</h1>");
+	// }
+	// function showResult(data) {
+	// 	$('#holder').append("<h1>"+data.word+"</h1>");
+	// 	$('#holder').append("<div><img src='"+data.image+"'/></div>");
+	// }
+</script>
+<!-- END - practice promise -->
+
+</body>
+</html>
