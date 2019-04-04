@@ -1,3 +1,7 @@
 https://www.youtube.com/watch?v=aWgtRKfrtMY
 
 https://www.youtube.com/watch?v=nYkdrAPrdcw
+
+https://github.com/datntvn/MyWorkspace/tree/master/StandardMicroService
+
+https://github.com/datntvn/MyWorkspace/tree/master/MicroSrvAdapter
