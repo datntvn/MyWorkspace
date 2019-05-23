@@ -1,0 +1,42 @@
+  - Get all the dependency and put in a container
+  - container can be considered with 2 ideas:
+    (1) idea of packaging format
+    (2) idea of container runtime
+
+- Sometime build tools are not sufficient to create a self-contained app 
+  + So, we create a self contained app, make sure it is portable, have a contract between Developer and infrastructure
+    * Refer to file "k8_declarative.txt"
+
+- Generally, an app starts up, bind to a port, takes traffic, does something with data.
+
+Kubernetes Key Concepts
+    - Pod: Group of tightly coupled containers and volumes
+    - Replication Controller: A loop that drives current state toward desired state
+    - Service: A set of running pods that work together
+    - Volumes: Pod level storage and configuration
+
+Containers:
+    - Image format and runtime configuration
+        + Root Filesystem (Tarball)
+        + Entrypoint
+        + cgroups
+        + Namespaces (net, mnt, ...)
+    - Distributed via Image registries
+        + Support for public and private registries
+        + Containers are created from Images
+
+Pods:
+    - Logical Application
+        + One or more containers and volumes 
+        + Ephermeral
+        + Shared namespaces
+        + One IP per pod
+    - Allow us to compose "how logical application looks like" a kind of resource envelop, e.g: IP address that is shared,
+    volumes can be shared between containers, and this logical construct feels like a virtual machine. We can move it around and 
+    gurantee to start/stop like an atomic unit
+
+Replication Controllers
+    Drive current state towards desired state
+        app: foo
+        replicas: 1
+        

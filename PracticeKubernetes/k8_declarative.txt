@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: nginx
+    labels:
+        app: nginx
+spec:
+    containers:
+        image: nginx:1.10.0
+
+(1) Above is considered to be a contract between the developer & k8: is a nginx image.
+(2) Send the above as a file to API server of k8s
+(3) Schedule will assign to a machine
