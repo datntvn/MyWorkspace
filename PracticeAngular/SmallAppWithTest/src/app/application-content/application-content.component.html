@@ -1,0 +1,31 @@
+<div class="ui main text container">
+  <h1 class="ui header">Welcome to {{title}} clouddeveloper --> Dat!</h1>
+  <p>Content comming soon</p>
+
+  <div class="ui grid">
+    <div class="eight wide column" style="background-color: gray;">
+      <div class="ui header small">Test Column 1</div>
+      <button class="ui button primary" (click)="showModal()">Show Modal</button>
+    </div>
+    <div class="three wide column">
+      <div class="ui header small">Test Column 2</div>
+    </div>
+  </div>
+</div>
+<app-user-notification></app-user-notification>
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">Profile Picture</div>
+  <div class="description">
+    <div class="ui header">We've auto-chosen a profile image for you</div>
+  </div>
+  <div class="action">
+    <div class="ui black deny button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>

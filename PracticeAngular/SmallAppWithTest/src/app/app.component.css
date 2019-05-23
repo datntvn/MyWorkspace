@@ -1,0 +1,8 @@
+.wireframe {
+  margin-top: 2em;
+}
+.ui.footer.segment {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
