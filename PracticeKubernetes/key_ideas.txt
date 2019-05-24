@@ -39,4 +39,5 @@ Replication Controllers
     Drive current state towards desired state
         app: foo
         replicas: 1
-        
+
+Dang xem toi 15:00
