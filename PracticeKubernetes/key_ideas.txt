@@ -35,7 +35,7 @@ Pods:
     volumes can be shared between containers, and this logical construct feels like a virtual machine. We can move it around and 
     gurantee to start/stop like an atomic unit
 
-Replication Controllers
+Replication Controllers: works like a cluster-wise process manager
     Drive current state towards desired state
         app: foo
         replicas: 1

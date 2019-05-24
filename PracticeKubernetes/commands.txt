@@ -1,4 +1,40 @@
+------------------Session 1: Some useful commands------------------
 docker build -t projectFolder/lobsters:2.1.0 lobsters
-
 docker images
+kubectl create -f deployments/lobsters.yaml
+
+kubectl get secrets
+  kubectl describe secrets/<name of any secret from above command>
+
+------------------Session 2: Deploy a demo-------------------------
+(1) get the application to deploy
+- make sure nothing running:
+  $ kubectl get pods
+- we need mysql, so we need a deployment to deploy mysql
+
+(2) run this command to create the deployment for the above mysql
+- $ kubectl create -f deployment/mysql.yaml
+- we check the result by below command
+  $ kubectl get pods
+- at this time, "mysql" container is being created
+
+(3) we have to create a service for this, so that other application can find it
+- $ kubectl create -f service/mysql.yaml
+- we can check by :
+  $ kubectl get svc
+
+(4) The next thing we need is our web app
+- Let's deploy the application
+- $ kubectl create -f deployment/lobsters.yaml
+- Check again by: $ kubectl get pods
+- We will get an IP address, check by: $ kubectl get svc
+
+(5) create the database migration
+- we need to run a job one time 
+- we need to follow the same flow, no need to go to server, no jumb box
+- we give a workflow to the scheduler: run one rake task, once, until it's successful, then kill it
+  + similar to a web-app but we just run 1 command, then exit
+- $ kubectl create -f jobs/lobsters-db-schema-load.yaml
+- we can review by: $ watch kubectl get jobs
+
 
