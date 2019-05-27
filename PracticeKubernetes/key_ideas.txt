@@ -36,8 +36,14 @@ Pods:
     gurantee to start/stop like an atomic unit
 
 Replication Controllers: works like a cluster-wise process manager
+    Tracking a process to run within someware inside cluster at all time
     Drive current state towards desired state
         app: foo
         replicas: 1
 
-Dang xem toi 15:00
+Audit trail of all the jobs that are running in the system???
+
+Logs
+    We should be centralizing our Logs
+    But, we could also view the load ad-hoc by using API
+    - $ kubectl logs <container's name from "kubectl get pods"> -f

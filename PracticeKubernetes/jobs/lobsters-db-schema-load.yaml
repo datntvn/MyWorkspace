@@ -1,4 +1,10 @@
-,,, something need to be filled in here ,,,
+apiVersion: extension/v1beta1
+kind: Job
+metadata:
+  name: lobster-db-schema-load
+spec:
+  selector:
+    matchLabels:
         task: db-schema-load
     template:
       metadata:

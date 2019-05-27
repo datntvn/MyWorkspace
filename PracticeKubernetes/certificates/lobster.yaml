@@ -1,0 +1,10 @@
+apiVersion: stable.anyOrg.com/v1
+kind: Certificate
+metadata:
+  name: lobsters
+spec:
+  domain: lobsters.anyOrg.com
+  email: admin.anyOrg@gmail.com
+  provider: googledns
+  secret: adminAnyOrg
+  secretKey: service-account.json

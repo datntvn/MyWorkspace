@@ -5,7 +5,9 @@ kubectl create -f deployments/lobsters.yaml
 
 kubectl get secrets
   kubectl describe secrets/<name of any secret from above command>
-
+kubectl describe svc <name of service: e.g lobsters> 
+kubectl logs <container's name from "kubectl get pods"> -f
+  -f : follow the log
 ------------------Session 2: Deploy a demo-------------------------
 (1) get the application to deploy
 - make sure nothing running:
@@ -37,4 +39,60 @@ kubectl get secrets
 - $ kubectl create -f jobs/lobsters-db-schema-load.yaml
 - we can review by: $ watch kubectl get jobs
 
+(6) create the database seed data
+- $ kubectl create -f jobs/lobsters-db-seed.yaml
 
+(7) scale the app
+- e.g: change replica number from 1 to 10, then execute command
+- $ kubectl apply -f  deployment/lobsters.yaml
+
+(8) If we have newly updated image for the app, use below command to tell k8s to have new image
+- Edit file deployment/lobsters.yaml with new image's name
+- $ kubectl apply -f deployment/lobsters.yaml
+- Cluster's job will do a rolling update based on policy (???)
+
+(9) Create a k8s extension, to have support for https 
+- $ kubectl create -f extensions/certificate.yaml
+
+(10) Here is that we need
+- K8s will automatically create a restin point 
+  + store it inside this backend and manage everything to do with this particular state  
+- with this object, we will create a new tool
+  + watch for those changes 
+  + & do some implementation that when I see this certificate object, then it can go 
+    + and interact with list of encrypting and give me a real certificate back 
+  + and we want this to happen behind the scene so, when it's done we want it to populate the secret 
+
+(10.1) Here is what we do:
+- We add nginx above the existing pods (refer to file deployments/lobsters-secure.yaml)
+  + we don't have to work with dev team
+- We put a container on TOP of the same pod
+  + That container gonna takes in the HTTPS traffic 
+  + That container needs a configuration, because it needs to know how to proxy to a backend
+  + Then it needs some certificate, and nginx happens to want to load this certificate from file system
+    * So, environment variable won't work here 
+- Summary: so we add a container right inside a pod, and then refer to 2 secrets
+  + One secret is gonna be the TLS certificate and I want that to come from the encrypt 
+    * But I'm not gonna tell my app about this encrypt, I'm not gonna tell my system about this encrypt
+    * I wanna hold these abstraction
+- So, the next thing I want to do now is to create this config file for nginx
+- $ kubectl create configmap nginx --from-file configs/lobsters.conf
+  + It will upload as the name on the disk
+  + Through pushing this, it actually generates a object in k8s so now that will be the desired state
+- Check again by: $ kubectl get configmaps
+  + That holding our configuration file and inside of that the configmap with the samename with the thing that was on disk
+
+(10.2) The next thing we want to do is to create the secret
+  - I want it to be automated, I don't want to go and provision certificate: file kube-cert-manager.yaml
+  
+(10.3) We wanna start the controller 
+- What we are trying to do is to get a valid certificate from the encrypt that my browser trust		
+	and inject it as the k8s secret on the backend	
+	so that my pod doesn't know the difference		
+- In the background, we do not do any compilation		
+	so we don't create provider and then recompile something	
+- The deamon run in the background and they watching for changes as soon as that certificate object created it's gonna		
+	kickoff the job get the certificate from that encrypt , bring back to resolve and inject that into secret in realtime , 
+  no delays here
+- $ kubectl create -f deployment/kube-cert-manager.yaml
+	
