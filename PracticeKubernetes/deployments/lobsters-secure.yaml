@@ -1,5 +1,7 @@
-
-,,, something missing here ,,,
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
     app: lobsters
   name: lobsters
 spec:

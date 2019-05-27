@@ -6,7 +6,10 @@ kubectl create -f deployments/lobsters.yaml
 kubectl get secrets
   kubectl describe secrets/<name of any secret from above command>
 kubectl describe svc <name of service: e.g lobsters> 
-kubectl logs <container's name from "kubectl get pods"> -f
+kubectl logs <pod's name from "kubectl get pods"> -f
+
+kubectl logs <pod's name from "kubectl get pods"> -c <container's name within the pod file> -f
+
   -f : follow the log
 ------------------Session 2: Deploy a demo-------------------------
 (1) get the application to deploy
@@ -95,4 +98,17 @@ kubectl logs <container's name from "kubectl get pods"> -f
 	kickoff the job get the certificate from that encrypt , bring back to resolve and inject that into secret in realtime , 
   no delays here
 - $ kubectl create -f deployment/kube-cert-manager.yaml
+  + This also has store, so, it gonna mount the store on this thing's persistent 
+  + NOTE that kube-cert-manager.yaml defines multiple containers in there
 	
+(10.4) The next thing we need to do is to create the certificate object
+- This is something that I define, this is my own schema
+- This is my own schema, so I have a new thing that k8s never understood before. i.e: lobster.yaml
+- The file is saying: I can give a certificate for the domain lobsters.anyOrg.com, the email address,
+  + little bit of data require by letencrypt issue me a real certificate (i.e: https://letsencrypt.org)
+  + ketsencrypt will issue me a challenge token to see if I actually on the domain and I'm going to have to populate my
+  + google cloud dns with the token which I get from letsencrypt and then if it checks out then issue me a real certificate
+  + and then I wanna inject that into my file system
+- $ kubectl create -f certificates/lobsters.yaml
+
+** This is great, because we have the same interface to get certificate for everything running inside k8s

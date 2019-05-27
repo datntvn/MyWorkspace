@@ -47,3 +47,5 @@ Logs
     We should be centralizing our Logs
     But, we could also view the load ad-hoc by using API
     - $ kubectl logs <container's name from "kubectl get pods"> -f
+
+Customer Resource Declaration ???
