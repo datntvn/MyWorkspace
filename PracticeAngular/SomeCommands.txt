@@ -1,0 +1,3 @@
+
+ng new <name of the app>
+ng serve
