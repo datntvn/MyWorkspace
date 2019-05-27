@@ -5,6 +5,9 @@ Done: 003
 006: ngModel is a built in function of Angular, A is split up into multi modules (i.e sub packages), and we need to explicitly add them in order to use them
       app.model.ts is the place to edit:  
 Done folder 01 - getting started
+DONE 2/016 
 Done 2/018
+Done 2/023
+Done 2/025
 
 
