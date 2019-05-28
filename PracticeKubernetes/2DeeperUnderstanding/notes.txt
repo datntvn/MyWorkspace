@@ -1,0 +1,5 @@
+
+Compare docker and vagrant
+https://dzone.com/articles/vagrant-vs-docker-which-is-better-for-software-dev
+
+https://www.codehub.vn/Khac-nhau-giua-Vagrant-va-Docker
