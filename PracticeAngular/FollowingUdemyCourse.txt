@@ -13,7 +13,11 @@ Done 2/026 event binding
 Done 028
 Done 030
 Done 032 - directive
-
+Done 33
+Done 34
+Done 35
+Done 36
+Done 37
 
 
 
