@@ -8,5 +8,8 @@ ng serve
   OR 
   $ ng g c servers
 
-
+-- create a service
+  $ ng g service services/auth
+  optionally, we can skip the creation of spec files
+  $ ng g service services/auth --spec=false
 

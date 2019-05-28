@@ -1,0 +1,28 @@
+
+Problem with npm install
+  npm WARN ajv-keywords@3.4.0 requires a peer of ajv@^6.9.1 but none was installed.
+  Ref: https://stackoverflow.com/questions/50320193/ajv-keywords3-2-0-requires-a-peer-of-ajv6-0-0
+  Tried:
+    - npm i ajv
+    - npm install ajv-keywords@3.4.0
+
+Another problem:
+  > node-gyp rebuild
+
+  xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
+
+npm WARN codelyzer@4.2.1 requires a peer of @angular/common@>=2.3.1 <7.0.0 || >6.0.0-beta <7.0.0 but none was installed.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! argon2@0.16.2 install: `node-gyp rebuild`
+
+
+My NOTE: ---> does not have time for now to solve all problem with "npm install" , so skip this for now, 
+
+
+This resource mentioned about: Observable
+
+
+Done: 1 - introduction
+Done: 2 - 1
+
