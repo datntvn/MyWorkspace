@@ -9,5 +9,12 @@ DONE 2/016
 Done 2/018
 Done 2/023
 Done 2/025
+Done 2/026 event binding
+Done 028
+Done 030
+Done 032 - directive
+
+
+
 
 
