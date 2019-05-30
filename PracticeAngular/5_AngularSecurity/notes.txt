@@ -25,4 +25,4 @@ This resource mentioned about: Observable
 
 Done: 1 - introduction
 Done: 2 - 1
-
+Done: 2 - 2
