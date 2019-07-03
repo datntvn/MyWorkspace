@@ -6,3 +6,4 @@ This project contains sample code on how to
 
 2. create and use angular directive
 
+NOTE: command to generate a directive code: ng generate directive emoji
