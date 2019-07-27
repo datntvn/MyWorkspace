@@ -1,0 +1,7 @@
+Keywords.txt
+
+
+object: The object keyword creates a new singleton type,
+
+Related concepts: objects, modules, and namespaces
+
