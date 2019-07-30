@@ -1,0 +1,12 @@
+Foundation knowledge for functional programming:
+  https://www.youtube.com/watch?v=eis11j_iGMs
+
+At minutes: 4:15 onward
+
+Lambda calculus: only 3 things
+It got Variable: x, y or z ,...
+It got a way of building function: the lambda notation
+And it got a way of applying function
+
+
+My note: it is very interesting when I heard he said about "apply" <- perhaps that's why javascript, and Scala having function "apply"
