@@ -10,3 +10,6 @@ And it got a way of applying function
 
 
 My note: it is very interesting when I heard he said about "apply" <- perhaps that's why javascript, and Scala having function "apply"
+
+Another interesting thing related to how he explained about definition of NOT
+  - By "recursively" expanded lambda function "phase-by-phase" until the last phase, he re-applied the lambda-function of TRUE then the aha moment arise to me.
