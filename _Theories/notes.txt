@@ -13,3 +13,8 @@ My note: it is very interesting when I heard he said about "apply" <- perhaps th
 
 Another interesting thing related to how he explained about definition of NOT
   - By "recursively" expanded lambda function "phase-by-phase" until the last phase, he re-applied the lambda-function of TRUE then the aha moment arise to me.
+
+By watching the video, I came to understand that:
+	Algebraic Data Types for Typescript
+	And "data constructor" for scala Or Haskell
+all of these terms refer to the same concept
