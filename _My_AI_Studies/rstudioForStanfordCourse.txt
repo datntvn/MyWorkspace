@@ -1,0 +1,12 @@
+docker pull rocker/rstudio
+docker run -p 8787:8787 rocker/rstudio
+
+	ERROR: You must set a unique PASSWORD (not 'rstudio') first! e.g. run with:
+	docker run -e PASSWORD=ai123456 -p 8787:8787 rocker/rstudio
+
+login account: rstudio/ai123456
+
+
+
+Nguồn tham khảo để biết được ta cần phải sử dụng rstudio: https://www.youtube.com/watch?v=hfEdTDC4T4s
+
