@@ -6,9 +6,12 @@ First thing first:
 I enrolled Stanford online course for ProbStat: https://lagunita.stanford.edu/
 I joined kaggle.com
 
--------------------
+----------------------------------------------------------------------------
 Setup coding environment (R lang) for doing exercise with the course
   (1) Downloaded docker image for R: https://hub.docker.com/_/r-base
-
+----------------------------------------------------------------------------
+Day 3:
+So far... khoá học của stanford rất tốt vì nó có cung cấp học liệu với R
+chứ không chỉ làm toán theo công thức như kiểu học ở đại học VN.
 
 

@@ -1,0 +1,21 @@
+Day 1:
+  Watched and done: this video https://www.youtube.com/watch?v=fvF2H85ko9c
+
+Day 3: 
+  DOING: following this video
+    https://www.youtube.com/watch?v=i92VI289zWw (Until 16:00)
+
+    My note along the way... we have to find dataset with emoji 
+      tweets.csv
+      tweets_all.csv <-- some emojis had been changed to unicode
+
+    Vào phút 22: tác giả có show cách đọc file data csv
+    
+Day 4:
+  DOING: xem đến phút 28:48
+  DONE with: đã load được file rdata với kaggle, và đã in được output ra
+    Ref to: https://stackoverflow.com/questions/7270544/how-to-see-data-from-rdata-file
+    And ref to: https://stackoverflow.com/questions/52699090/opening-rdata-file-on-r
+
+      
+
