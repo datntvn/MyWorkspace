@@ -1,0 +1,3 @@
+Để nhanh chóng tiến đến mục machine learning, mình cần lướt nhanh qua các mục của môn xác suất thống kê
+- để nắm được what, và skip phần how, xem như học các công cụ và công dụng của nó nhưng chưa tập trung vào cách sử dụng công cụ
+- khi đã đạt được đến mức luyện tập với Machine Learning, khi cần ta sẽ quay lại tìm phần công cụ tương ứng, và khi đó sẽ đi vào chi tiết, và luyện tập phần how của công cụ tương ứng

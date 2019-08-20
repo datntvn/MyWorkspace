@@ -17,5 +17,22 @@ Day 4:
     Ref to: https://stackoverflow.com/questions/7270544/how-to-see-data-from-rdata-file
     And ref to: https://stackoverflow.com/questions/52699090/opening-rdata-file-on-r
 
-      
+Day 5:
+  49:47      
+
+Day 6:
+  Function get_items_with_emoji... được định nghĩa ở phút 52:42
+    Xem ở đây để tham khảo cách tạo function...
+
+Lưu ý: phút 57:34 có hiển thị lại các thông tin chính của đoạn code R
+
+library(tidyverse)
+
+tweets_startups <- read_csv("../input/24-thousand-tweets-later/tweets.csv")
+tweets_trolls <- read_csv("../input/russian-troll-tweets/tweets.csv")
+
+Cụ thể hơn, để có thể thực hành lại bài này cần xác định kỹ hơn các bộ dataset mà tác giả đã sử dụng
+
+
+DONE watching the video
 

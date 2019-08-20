@@ -14,4 +14,7 @@ Day 3:
 So far... khoá học của stanford rất tốt vì nó có cung cấp học liệu với R
 chứ không chỉ làm toán theo công thức như kiểu học ở đại học VN.
 
+First week: summary: học được 5 ngày với khoá học P&S. Đã thực hành được trên kaggle, và đã download và chạy được RStudio ở local. Đã load được data set vào RStudio và tạo được alias cho column name.
+
+
 
