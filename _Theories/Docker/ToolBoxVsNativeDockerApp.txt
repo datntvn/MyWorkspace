@@ -1,0 +1,3 @@
+[quote from Mastering Akka: page 28/428]
+
+The biggest difference between these two options will be what local host address Docker uses when binding applications to ports. When using Docker Toolbox, docker-machine is used, which will by default bind applications to the local address of 192.168.99.100. When using one of the native Docker apps, the loopback address of 127.0.0.1 (localhost) will be used instead.
