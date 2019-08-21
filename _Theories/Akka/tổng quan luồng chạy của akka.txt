@@ -1,0 +1,29 @@
+Về tổng quan, luồng chạy của akka là như sau
+
+1. The HTTP request comes in and is handled by Netty's NIO channel handling code on top of its own thread pool.
+HTTP request đi đến, à được xử lý bởi mã nguồn của kênh NIO của Netty, thuộc phần trên cùng của thread pool của riêng nó
+2. Netty passes the code off to the Unfiltered framework for handling, still using Netty's thread pool.
+Netty triệu gọi code của Unfiltered framework để xử lý, cùng lúc đó, vẫn đang sử dụng thread pool của Netty
+Tham khảo cho thư viện Unfiltered:
+  https://github.com/eed3si9n/Unfiltered
+3. Unfiltered looks up a service actor via actor selection and uses the ask pattern to send it a message, returning a Future that will hold the result of the service call.
+Thư viện Unfiltered đi tìm 1 service actor thông qua cơ chế actor selection và sử dụng kiến trúc/pattern "ask" để gửi đến actor 1 message, trả về 1 Future, theo đó sẽ có chứa kết quả trả về của việc gọi "service"
+4. The service actor that receives the message is running on the actor system's main Fork/Join thread pool.
+Service actor mà nhận được message vào lúc đó, nó đang chạy/hoạt động trên thread pool của Fork/Join chính của hệ thống
+5. The actor talks to the Postgres db via the Slick DAO. The SQL itself runs within Slick's AsycExecutor system, on top of another separate thread pool.
+Actor liên lạc với Postgres db thông qua DAO của SLick. Bản thân SQL chạy bên trong hệ thống AsycExecutor của Slick, ở bên trên một thread pool riêng.
+6. The actor sends a response back to the sender (the Future from the endpoint) using the pipe pattern.
+Actor gửi 1 response về cho sender (chính là object Future nhận được từ endpoint), tuân thủ theo kiến trúc pipe
+7. The Future in the endpoint, which runs on the actor system's dispatcher, is completed, which results in a response being communicated through Unfiltered and Netty and then back into the wire.
+object trên endpoint, vốn hoạt động/chạy trên dispatcher của hệ thống của ctor, đã được hoàn tất, theo đó tạo thành kết quả là 1 response đang được liên lạc thông qua Unfiltered và Netty và sau đó trở ngược lại theo kênh dẫn/wire.
+
+Các thuật ngữ cần đọc thêm trong đoạn trên bao gồm:
+- Netty's NIO channel
+- Netty's thread pool
+- Unfiltered framework
+- Unfiltered's "ask pattern"
+- system's main Fork/Join thread pool
+- Slick's AsycExecutor system
+- pipe pattern
+- actor system's dispatcher
+
