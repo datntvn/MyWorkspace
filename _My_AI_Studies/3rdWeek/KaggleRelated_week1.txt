@@ -1,0 +1,21 @@
+Week 3: day 12th: begin to redo this gaggle analysis
+  https://www.youtube.com/watch?v=F-zanmuE_VM
+
+was Able to find the dataset, and able to load dataset files just like the video shown, very lucky
+
+
+-- prepare some code as below will be pasted into gaggle editor:
+
+library(tidyverse)
+
+tweets_startup <- read_csv("../input/24-thousand-tweets-later/tweets.csv")
+tweets_trools <- read_csv("../input/russion-troll-tweets/tweets.csv")
+
+get_items_with_emoji <- function(text_vector) {
+    return (text_vector[rep1('\U{1F300}-\U{1F6FF}', text_vector)])
+}
+
+percent_items_with_emoji <- function(text_vector) {
+    ratio <- length(get_items_with_emoji(text_vector))/length(text_vector)
+    return(ratio * 100)
+}
