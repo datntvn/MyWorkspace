@@ -1,7 +1,9 @@
 Keywords.txt
 
 
-object: The object keyword creates a new singleton type,
+(1) object: The object keyword creates a new singleton type,
 
 Related concepts: objects, modules, and namespaces
 
+(2) ADT: Algebraic Data Type
+List is just one example of what is called an algebraic data type (ADT). (Somewhat confusingly, ADT is sometimes used in OO to stand for "abstract data type".) 
