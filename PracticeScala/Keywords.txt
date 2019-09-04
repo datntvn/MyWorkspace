@@ -7,3 +7,11 @@ Related concepts: objects, modules, and namespaces
 
 (2) ADT: Algebraic Data Type
 List is just one example of what is called an algebraic data type (ADT). (Somewhat confusingly, ADT is sometimes used in OO to stand for "abstract data type".) 
+
+(3) Right-associative
+List in standard library version is that Cons is called ::, which is right-associative (all operators ending in : are right-associative), so 1 :: 2 :: Nil is equal to List(1,2,3)
+When pattern matching, case Cons(h,t) becomes case h :: t, which avoids having to nest parentheses if writing a pattern like case h :: h2 :: t to extract more than just the first element of the List.
+
+(4) Naming convention for variable name:
+It is a common convention to use xs, ys, as, bs as variable names for a sequence of some sort, and x, y, z, a, or b as the name for a single element of a sequence. 
+Another common naming convention is h for the first element of a list (the "head" of the list), t for the remaining elements (the "tail"), and l for an entire list.
