@@ -14,3 +14,13 @@ Project **MicroSrvAdapter** is a template for implementing an Adapter for Micros
 
 
 Project **XamarinGoogleAuthIOS** is a guideline, and sample code for Xamarin to have OAuth with Google on iOS. I had not integrate with Android but the idea is generally the same.
+
+## Updated on Apr 9th, 2020
+Limitation of QueryDSL
+When using library querydsl-jpa then
+- not able to alias on column name
+- Related to: https://github.com/querydsl/querydsl/issues/2558
+
+When using library querydsl-sql, then
+- thì không sử dụng được các mối liên kết cho composite key thông qua @Embedded
+- not able to join, innerjoin, leftjoin, ... on composite keys that has been configured with @Embeddable, and @EmbeddedId
