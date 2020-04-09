@@ -23,3 +23,8 @@ When using library querydsl-sql, then
 ***But still limited , because, cannot use a list of dynamic Predicate. in order to use a list of dynamic Predicate, then we must set alias at columns to be select.***
 ***But "querydsl-jpa" is not able to use ".as".***
 ***".as" is a feature of "querydsl-sql"***
+
+NOTE: file "queryDSL_dynamicPredicates.zip" us a project that is generated from command:
+```
+openapi-generator generate -i <Your OAS YML file> -c generator-config.json -g spring
+
