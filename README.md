@@ -22,5 +22,4 @@ When using library querydsl-jpa then
 - Related to: https://github.com/querydsl/querydsl/issues/2558
 
 When using library querydsl-sql, then
-- thì không sử dụng được các mối liên kết cho composite key thông qua @Embedded
 - not able to join, innerjoin, leftjoin, ... on composite keys that has been configured with @Embeddable, and @EmbeddedId
