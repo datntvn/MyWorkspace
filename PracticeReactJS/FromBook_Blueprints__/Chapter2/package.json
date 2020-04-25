@@ -22,7 +22,7 @@
     "watchify": "^3.6.1",
     "history": "3.0.0",
     "jsxstyle": "0.0.22",
-    "lodash": "4.13.1",
+    "lodash": "4.17.15",
     "react-bootstrap": "0.29.5",
     "react-router": "2.5.2",
     "react-router-bootstrap": "0.23.0",
