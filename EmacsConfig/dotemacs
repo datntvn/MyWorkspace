@@ -1,0 +1,107 @@
+(setq backup-directory-alist `(("." . "~/Downloads/esaves")))
+(load "/Users/datngo/.emacs.d/datnt/first")
+(global-set-key [f6] 'line-to-top-of-window)
+
+;; BEGIN load config of treemacs
+;; (load "/Users/datngo/.emacs.d/datnt/treemacs")
+;; END load config of treemacs
+;;;; NOTE: Use ESC x,  instead of M-x ;;;; Ref: https://www.emacswiki.org/emacs/MetaKeyProblems
+
+;; indentation: https://www.reddit.com/r/emacs/comments/5z7cy6/help_indentation_on_new_line/
+;; (setq-default indent-tabs-mode nil)
+;; (setq-default tab-width 2)
+;; (setq indent-line-function 'insert-tab)
+(blink-cursor-mode 0)
+
+;; BEGIN: setup for MELPA
+(require 'package)
+
+;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+;; and `package-pinned-packages`. Most users will not need or want to do this.
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
+;; để tìm package thì dùng lệnh: Alt-x list-packages, rồi tìm package rồi cài
+;; END: setup for MELPA
+
+;; BEGIN : sr-speedbar ********************* - NOTE: package.cl đã bị deprecated, nhưng vẫn chạy đc, ko tiện dụng lắm
+;; enable speedbar, ref to: /Users/datngo/Documents/projects/_self/emacs.d/emacs-config
+;;; Emacs Load Path
+;; (setq load-path (cons "/Users/datngo/Documents/projects/_self/emacs.d/emacs-config" load-path))
+;; speedbar in the same frame
+;; (require 'sr-speedbar)
+;; (load "/Users/datngo/Documents/projects/_self/emacs.d/emacs-config/sr-speedbar")
+;; END :  ********************* speedbar
+
+(global-set-key [f8] 'treemacs)
+
+;; Config dark mode for emacs, ref: http://ergoemacs.org/emacs/emacs_playing_with_color_theme.html
+(load-theme 'misterioso) ; ko hiểu do mode này hay sao, xuống dòng hay bị auto indentation
+(electric-indent-mode 0) ; đang tìm cách tắt việc tự động indentation đi thông qua lệnh này
+
+;; move word forward, backward:
+(global-set-key (kbd "<M-right>") 'forward-word)
+(global-set-key (kbd "<M-left>") 'backward-word)
+
+;; move end of line, begin of line:
+;; ref: https://stackoverflow.com/questions/42844641/trying-to-bind-ctrl-right-to-forward-word-in-emacs
+;; Muốn Ctrl left & right hoạt động, cần phải tắt shortcut của keyboard trong setting trước: settings -> keyboard -> Shortcuts
+;;   those key combinations were being taken by the OS
+(setq mac-command-modifier 'control)
+(global-set-key (kbd "<C-left>") 'move-beginning-of-line)
+(global-set-key (kbd "<C-right>") 'move-end-of-line)
+
+; change color for cursor: https://stackoverflow.com/questions/4642835/how-to-change-the-cursor-color-on-emacs
+(setq default-frame-alist
+  '((cursor-color . "grey")))
+
+;; Map Ctrl-w to kill buffer
+;; (global-set-key (kbd "C-w") 'kill-buffer) ; Ko hiểu sao cú pháp <C-x x> thì ko được, phải theo kiểu ko có dấu ngoặc
+;; để giải quyết vấn đề, đã tham khảo: https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-Rebinding.html
+(global-set-key (kbd "C-w") 'kill-this-buffer)
+
+;; Map Ctrl-s thành lưu file, cái cũ là search, ta sẽ map search với Ctrl-f
+(global-set-key (kbd "C-s") 'save-buffer)
+
+
+;; Map Ctrl-f to find file:
+(global-unset-key "\C-f")
+(global-set-key (kbd "C-f") 'isearch-forward)
+
+;; Map Ctrl-c to copy buffer:
+(global-set-key (kbd "C-c") 'kill-ring-save)
+
+;; Map Ctrl-c to copy buffer:
+(global-unset-key "\C-v")
+(global-set-key (kbd "C-v") 'yank)
+
+;; Map Ctrl-n to switch to buffer *scratch*:
+(global-unset-key "\C-n")
+;; nhờ tham khảo ở link bên dưới mới phát hiện ra cách sử dụng lambda và interactive để cấu hình cho switch-to-buffer
+;; ref: https://stackoverflow.com/questions/1030392/emacs-global-set-key-and-calling-interactive-function-with-argument
+(global-set-key (kbd "C-n") (lambda () (interactive) (switch-to-buffer "*scratch*")))
+
+;; When open up Emacs, don't display this buffer
+(setq inhibit-startup-screen t)
+
+;; Map Ctrl-t to list-buffers
+(global-unset-key "\C-t")
+(global-set-key (kbd "C-t") 'list-buffers)
+
+;; TODO: thiết lập neo-tree để nó ko tự động chuyển thư mục
+
+; ----------------------------------------------------------------------------------------------------------------------
+;; 1> NOTE: câu lệnh để mô tả shortcut key của emacs: M-x describe-key
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(treemacs all-the-icons)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
