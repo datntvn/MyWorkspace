@@ -15,3 +15,4 @@ Project **MicroSrvAdapter** is a template for implementing an Adapter for Micros
 
 Project **XamarinGoogleAuthIOS** is a guideline, and sample code for Xamarin to have OAuth with Google on iOS. I had not integrate with Android but the idea is generally the same.
 
+## 
