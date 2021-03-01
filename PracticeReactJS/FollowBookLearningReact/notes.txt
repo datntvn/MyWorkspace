@@ -1,4 +1,60 @@
-Read to page: 19/350
+Read to page: 95/350, until: JSX
 
 Git repo of this book: https://github.com/moonhighway/learning-react
 
+------------------------------------------------------------------------------------------------
+In order to work with React in the browser, we need to include two libraries:
+1. React
+    React is a library that is designed to update the browser DOM for us.
+    React DOM is made up of React elements.
+2. ReactDOM
+    ReactDOM contains the tools necessary to render React elements in the browser.
+
+Main idea
+    In React, we interact with a virtual DOM, or set of instructions that React will use to construct the UI and interact with the browser.
+    The virtual DOM is made up of React elements, which conceptually seem similar to HTML elements, but are actually JavaScript objects.
+
+  Create a React element
+      React.createElement("h1", null, "Baked Salmon")
+  Render a React element
+      var dish = React.createElement("h1", null, "Baked Salmon")
+      ReactDOM.render(dish, document.getElementById('react-container'))
+
+------------------------------------------------------------------------------------------------
+React Components
+  Components allow us to reuse the same DOM structure
+  React.Component: is an abstract class that we can use to build new React components.
+  Create new components through inheritance by extending this "React.Component" class.
+  e.g:
+    class IngredientsList extends React.Component {
+        renderListItem(ingredient, i) { return React.createElement("li", { key: i }, ingredient) }
+        render() {
+            return React.createElement("ul", {className: "ingredients"}, this.props.items.map(this.renderListItem) )
+        }
+    }
+
+------------------------------------------------------------------------------------------------
+Stateless Functional Components
+  Stateless functional components are functions, not objects; therefore, they do not have a "this" scope.
+  Stateless functional components are functions that take in properties and return a DOM element.
+
+  e.g: 
+    const IngredientsList = props => React.createElement
+    (
+      "ul",
+      {className: "ingredients"},
+      props.items.map(
+        (ingredient, i) => React.createElement("li", { key: i }, ingredient)
+      )
+    )
+------------------------------------------------------------------------------------------------
+When we change any of the values in this isolated dataset, we change the state of our application.
+ReactDOM.render makes changes by leaving the current DOM in place and simply updating the DOM elements that need to be updated.
+
+------------------------------------------------------------------------------------------------
+Factory
+  Instead of using createElement, we can create a React element with a built-in factory.
+    e.g: React.DOM.h1(null, "Baked Salmon")
+
+  ** If you use JSX with React, chances are you will never use a factory.
+------------------------------------------------------------------------------------------------
