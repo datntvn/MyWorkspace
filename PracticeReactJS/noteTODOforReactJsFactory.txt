@@ -1,1 +1,2 @@
 TODO: create notes for reactjs Factory
+  Ref: https://medium.com/mop-developers/factory-pattern-in-react-native-without-using-switch-df99bca31a55
